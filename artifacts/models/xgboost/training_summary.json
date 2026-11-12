@@ -1,0 +1,9 @@
+{
+  "model_type": "XGBoost",
+  "split_strategy": "Chronological (TransactionDT)",
+  "n_features": 161,
+  "val_pr_auc": 0.5667033639378721,
+  "val_roc_auc": 0.9294437700384724,
+  "test_pr_auc": 0.3496450622590006,
+  "test_roc_auc": 0.8930622184665953
+}

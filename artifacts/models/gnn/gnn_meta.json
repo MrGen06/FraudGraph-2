@@ -1,0 +1,9 @@
+{
+  "node_in_channels": {
+    "transaction": 161,
+    "card": 3,
+    "device": 3,
+    "email": 3
+  },
+  "hidden_channels": 64
+}

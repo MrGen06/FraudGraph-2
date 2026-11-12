@@ -32,3 +32,11 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Raw benchmark datasets (download separately; do not commit)
+data/raw/
+
+# Generated datasets and processed artifacts
+data/synthetic/training_transactions.csv
+data/processed/
+.matplotlib_cache/

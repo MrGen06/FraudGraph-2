@@ -1,0 +1,80 @@
+{
+  "test_records_count": 7500,
+  "test_fraud_count": 143,
+  "test_fraud_rate": 0.0191,
+  "validation_ensemble_weights": {
+    "tabular_weight": 0.95,
+    "graph_weight": 0.05
+  },
+  "models": [
+    {
+      "model": "XGBoost Baseline",
+      "pr_auc": 0.3496,
+      "roc_auc": 0.8931,
+      "optimal_threshold": 0.6267,
+      "f1_minority": 0.3893,
+      "macro_f1": 0.6892,
+      "precision": 0.4286,
+      "recall": 0.3566,
+      "fpr_at_90_recall": 0.3125,
+      "fpr_at_95_recall": 0.5847,
+      "fpr_at_99_recall": 0.7854,
+      "confusion_matrix": [
+        [
+          7289,
+          68
+        ],
+        [
+          92,
+          51
+        ]
+      ]
+    },
+    {
+      "model": "Hetero GNN (Relational)",
+      "pr_auc": 0.04,
+      "roc_auc": 0.643,
+      "optimal_threshold": 0.7074,
+      "f1_minority": 0.1236,
+      "macro_f1": 0.5511,
+      "precision": 0.1033,
+      "recall": 0.1538,
+      "fpr_at_90_recall": 0.6893,
+      "fpr_at_95_recall": 0.7778,
+      "fpr_at_99_recall": 0.9377,
+      "confusion_matrix": [
+        [
+          7166,
+          191
+        ],
+        [
+          121,
+          22
+        ]
+      ]
+    },
+    {
+      "model": "Hybrid Consensus (Dual-Model)",
+      "pr_auc": 0.3501,
+      "roc_auc": 0.8937,
+      "optimal_threshold": 0.6266,
+      "f1_minority": 0.3846,
+      "macro_f1": 0.6869,
+      "precision": 0.4274,
+      "recall": 0.3497,
+      "fpr_at_90_recall": 0.314,
+      "fpr_at_95_recall": 0.4842,
+      "fpr_at_99_recall": 0.8056,
+      "confusion_matrix": [
+        [
+          7290,
+          67
+        ],
+        [
+          93,
+          50
+        ]
+      ]
+    }
+  ]
+}

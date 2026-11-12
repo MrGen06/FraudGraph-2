@@ -1,0 +1,4 @@
+model,pr_auc,roc_auc,optimal_threshold,f1_minority,macro_f1,precision,recall,fpr_at_90_recall,fpr_at_95_recall,fpr_at_99_recall
+XGBoost Baseline,0.3496,0.8931,0.6267,0.3893,0.6892,0.4286,0.3566,0.3125,0.5847,0.7854
+Hetero GNN (Relational),0.04,0.643,0.7074,0.1236,0.5511,0.1033,0.1538,0.6893,0.7778,0.9377
+Hybrid Consensus (Dual-Model),0.3501,0.8937,0.6266,0.3846,0.6869,0.4274,0.3497,0.314,0.4842,0.8056

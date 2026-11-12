@@ -2,9 +2,11 @@ from datetime import datetime
 from decimal import Decimal
 
 from sqlalchemy import (
-    BigInteger,
+    Boolean,
     DateTime,
+    Float,
     Index,
+    Integer,
     Numeric,
     String,
     UniqueConstraint,
@@ -26,10 +28,11 @@ class Transaction(Base):
         Index("ix_transactions_source_account", "source_account_id"),
         Index("ix_transactions_destination_account", "destination_account_id"),
         Index("ix_transactions_user", "user_id"),
+        Index("ix_transactions_risk_level", "risk_level"),
     )
 
     id: Mapped[int] = mapped_column(
-        BigInteger,
+        Integer,
         primary_key=True,
         autoincrement=True,
     )
@@ -80,3 +83,13 @@ class Transaction(Base):
     country: Mapped[str | None] = mapped_column(String(2))
 
     region: Mapped[str | None] = mapped_column(String(100))
+
+    risk_score: Mapped[float | None] = mapped_column(Float, nullable=True)
+
+    risk_level: Mapped[str | None] = mapped_column(String(20), nullable=True)
+
+    is_flagged: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    consensus_verdict: Mapped[str | None] = mapped_column(String(50), nullable=True)
+
+    consensus_reasoning: Mapped[str | None] = mapped_column(String(1000), nullable=True)

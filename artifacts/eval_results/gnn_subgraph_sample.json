@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "2987405",
+      "label": "Tx 2987405",
+      "type": "transaction",
+      "is_center": true,
+      "risk_flag": false
+    },
+    {
+      "id": "card_sim",
+      "label": "Card #14285",
+      "type": "card",
+      "is_center": false,
+      "risk_flag": false
+    },
+    {
+      "id": "dev_sim",
+      "label": "Device: Windows 10/Chrome",
+      "type": "device",
+      "is_center": false,
+      "risk_flag": false
+    },
+    {
+      "id": "email_sim",
+      "label": "Domain: gmail.com",
+      "type": "email",
+      "is_center": false,
+      "risk_flag": false
+    }
+  ],
+  "links": [
+    {
+      "source": "2987405",
+      "target": "card_sim",
+      "relationship": "USES_CARD"
+    },
+    {
+      "source": "2987405",
+      "target": "dev_sim",
+      "relationship": "ORIGINATES_FROM"
+    },
+    {
+      "source": "2987405",
+      "target": "email_sim",
+      "relationship": "HAS_EMAIL"
+    }
+  ],
+  "card_id": "14285",
+  "device_id": "Windows 10/Chrome",
+  "email_id": "gmail.com",
+  "shared_entity_peers_count": 0,
+  "flagged_neighbor_fraud_count": 0,
+  "reasoning": "Standard single-entity transaction path without multi-hop compromised links."
+}

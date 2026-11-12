@@ -8,13 +8,19 @@ settings = get_settings()
 class Neo4jConnection:
 
     def __init__(self):
-        self.driver = GraphDatabase.driver(
-            settings.NEO4J_URI,
-            auth=(
-                settings.NEO4J_USERNAME,
-                settings.NEO4J_PASSWORD,
-            ),
-        )
+        self._driver = None
+
+    @property
+    def driver(self):
+        if self._driver is None:
+            self._driver = GraphDatabase.driver(
+                settings.NEO4J_URI,
+                auth=(
+                    settings.NEO4J_USERNAME,
+                    settings.NEO4J_PASSWORD,
+                ),
+            )
+        return self._driver
 
     def verify_connection(self) -> bool:
         try:
@@ -24,7 +30,9 @@ class Neo4jConnection:
             return False
 
     def close(self):
-        self.driver.close()
+        if self._driver is not None:
+            self._driver.close()
+            self._driver = None
 
 
 neo4j_connection = Neo4jConnection()
